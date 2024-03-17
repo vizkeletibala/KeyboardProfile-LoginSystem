@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to the external CSS file -->
+</head>
+<body>
+
+<div class="paragraph-container">
+    <p> <b>Thank you for participating!</b> <br> In order register an account, we need to train the model on your keyboard patterns. <br>
+    As of now, ideally <b>you should be on a desktop of laptop </b> for this to properly work.<br>
+    To register, all you have to do, is repeatedly type the given password into the container below, and press the submit button after each attempt! <br> 
+    The chosen password is: <b>'keyboardist'</b> <br>
+    There is no particular scientific reason behind this, other than the fact that it is fairly short and uses many different keys. <br> <br>
+
+    <h3>So to register, follow these steps:</h3>
+
+    <ul class="instruction-list">
+        <li>Be on a laptop or desktop!</li>
+        <li>Think of a username! It can be anything you can remember easily.</li>
+        <li>Write down your username and email in the boxes below!</li>
+        <li>Write the word <b>'keyboardist'</b> into the password box, and press submit!</li>
+        <li>Repeat the previous step (step 4), until the box is green and a message pops up!</li>
+        <li>After 10 or so attempts, the registartion button should appear, click it and you are done!</li>
+    </ul>
+
+    <p>
+        <h3>Some tips:</h3>
+        - Try to type the word as fast as you can! <br>
+        - Its okay if you make mistakes, but try to aim for consistency! <br>
+        - You can submit more times than needed, which helps the accuracy of the model. <br>
+    </p>
+
+</div>
+
+<div class="register-container">
+    <h2>Register</h2>
+    <form action="register.php" method="post">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+<div class="login-link">
+    <p>Let me help you a bit, the password is: <br>
+        <b>keyboardist</b>
+    </p>
+    <p>Already have an account? <a href="index.html">Login here</a></p>
+</div>
+
+</body>
+</html>

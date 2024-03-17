@@ -1,0 +1,204 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* CSS for header styling */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+.logo {
+    display: inline-block;
+    margin-right: 20px;
+    color: #fff;
+    text-decoration: none;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.paragraph-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.paragraph-container p {
+    font-size: 16px;
+    color: black;
+    line-height: 1.6;
+}
+
+.login-container {
+    max-width: 400px;
+    margin-top: 30px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.paragraph-container {
+    text-align: center;
+    margin: 20px auto; /* Add margin to the top and bottom, and auto margin to the sides */
+    padding: 20px;
+    background-color: #f8f9fa; /* Light gray background */
+    color: rgb(0, 0, 0); /* Dark text color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 600px; /* Limit maximum width */
+}
+
+.paragraph-container p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0; /* Remove default margin */
+}
+
+.register-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.register-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.register-link {
+    text-align: center;
+    margin: 20px auto; /* Add margin to the top and bottom, and auto margin to the sides */
+    padding: 20px;
+    background-color: #f8f9fa; /* Light gray background */
+    color: rgb(0, 0, 0); /* Dark text color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 600px; /* Limit maximum width */
+}
+
+.instruction-list{
+    margin-left: 20px;
+    list-style-type: number;
+    text-align: left;
+    padding: 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Vertically center items */
+    overflow: hidden;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.submit-button {
+    position: absolute; /* Position the button relative to its parent */
+    top: 0; /* Align the button with the top of the form group */
+    right: 0; /* Align the button with the right side of the form group */
+    padding: 5px 10px; /* Add padding to the button */
+    font-size: 14px; /* Adjust the font size of the button */
+    border: none; /* Remove border */
+    background-color: #007bff; /* Button color */
+    color: #fff; /* Text color */
+    border-radius: 3px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Adjust button appearance on hover */
+.submit-button:hover {
+    background-color: #0056b3; /* Darker color on hover */
+}
+
+/* Adjust button appearance on focus */
+.submit-button:focus {
+    outline: none; /* Remove default focus outline */
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-link p {
+    font-size: 14px;
+    color: #666;
+}
+
+.login-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
