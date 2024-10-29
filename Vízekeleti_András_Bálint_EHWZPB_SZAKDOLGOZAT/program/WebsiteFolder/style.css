@@ -1,0 +1,249 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    background-image: url("resources/matrix.png");
+    background-size: cover; 
+    background-position: center; 
+    font-family: 'Consolas', monospace;
+}
+
+header {
+    background-color: black; /* Black background */
+    padding: 20px;
+    text-align: center;
+    width: 50%; /* Set header width to 50% */
+    margin: 0 auto; /* Center the header */
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+/* Style for the logo/title */
+header .logo {
+    color: green; /* Green text */
+    font-size: 36px; /* Large font size for the title */
+    font-weight: bold;
+    text-decoration: none; /* Remove underline from the link */
+    font-family: 'Consolas', monospace; /* Apply Consolas font to the logo */
+}
+
+/* Style for the navigation */
+header nav ul {
+    list-style-type: none; /* Remove bullets from the list */
+    padding: 0;
+    margin: 10px 0 0 0; /* Margin between the logo and nav */
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 15px; /* Space between the nav items */
+}
+
+header nav ul li a {
+    color: green; /* Green text for nav links */
+    text-decoration: none; /* Remove underline from the links */
+    font-size: 18px; /* Font size for the nav links */
+    font-family: 'Consolas', monospace; /* Apply Consolas font to the nav links */
+}
+
+/* Add some hover effects for the nav links */
+header nav ul li a:hover {
+    text-decoration: underline; /* Underline text on hover */
+}
+
+.paragraph-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.paragraph-container p {
+    font-size: 16px;
+    color: black;
+    line-height: 1.6;
+}
+
+.login-container {
+    max-width: 400px;
+    margin-top: 30px;
+    margin: 0 auto;
+    padding: 20px;
+    color: green;
+    background-color: black;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.paragraph-container {
+    text-align: center;
+    margin: 20px auto; 
+    padding: 20px;
+    background-color: black; 
+    color: lightgrey; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    max-width: 600px; 
+}
+
+.paragraph-container p {
+    color: lightgrey;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0; 
+}
+
+#paragraph-container {
+    color: lightgray;
+}
+
+.register-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    color: green;
+    background-color: black;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.register-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.registration-info{
+    text-align: center;
+    margin: 20px auto; 
+    padding: 20px;
+    background-color: black; 
+    color: green; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    max-width: 600px;
+
+}
+
+
+.register-link {
+    text-align: center;
+    margin: 20px auto; 
+    padding: 20px;
+    background-color:black;
+    color: green; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 600px; 
+}
+
+.instruction-list{
+    margin-left: 20px;
+    list-style-type: number;
+    text-align: left;
+    padding: 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex; 
+    align-items: center;
+    overflow: hidden;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.submit-button {
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    padding: 5px 10px; 
+    font-size: 14px; 
+    border: none; 
+    background-color: #007bff;
+    color: #fff; 
+    border-radius: 3px; 
+    cursor: pointer; 
+}
+
+
+.submit-button:hover {
+    background-color: #0056b3; 
+}
+
+
+.submit-button:focus {
+    outline: none;
+}
+
+.login-link {
+    border: none;
+    border-radius: 5px;
+    padding: 20px;
+    width: 60%;
+    background-color: black;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.login-link p {
+    font-size: 14px;
+    color: #666;
+}
+
+.login-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}

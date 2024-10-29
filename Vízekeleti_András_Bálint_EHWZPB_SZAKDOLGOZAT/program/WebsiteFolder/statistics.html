@@ -1,0 +1,143 @@
+
+<?php
+header("Cache-Control: no-cache, must-revalidate");
+header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+header("Pragma: no-cache");
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Statistics</title>
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">Keyboard Pattern Login System</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    
+    </header>
+
+    <div class="paragraph-container">
+        <p><b>Succesful  login!</b>  <br>
+            Welcome to your statistics page! <br>
+            Here you can see your typing patterns and behavior compared to the average user, and your own personal average. <br>
+        </p>
+    </div>
+
+    <div class="chartContainer" id="chartContainer1" style="height: 300px; width: 60%; margin: 20px auto; background-color: black; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);"></div>
+    <div class="chartContainer" id="chartContainer2" style="height: 300px; width: 60%; margin: 20px auto; background-color: black; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);"></div>
+
+    <div class="paragraph-container">
+        <p> 
+            All numbers in the charts are in milisecundum (ms), thats 1/1000 seconds.<br>
+            On the X axis you can see the keys or keyintervals and their respective time. <br>
+            For the Between Keys Average you can see the time that passed between the keys,<br> 
+            and for the Key Press Average, you are seeing the lenght of time you pressed down each button.<br>
+        </p>
+    </div>
+
+    <div class="login-link">
+        <p>If you have any questions you can contact me at <b>balint.vizkeleti@gmail.com</b></p>
+    </div>
+
+    <script>
+        window.onload = function () {
+
+            function readJSONData(userData, averageUserData, chartContainerID) {
+                Promise.all([fetch(userData), fetch(averageUserData)])
+                    .then(responses => Promise.all(responses.map(response => response.json())))
+                    .then(([data1, data2]) => {
+                        integrateDataIntoChart(data1, data2, chartContainerID);
+                    })
+                    .catch(error => console.error('Error reading JSON data:', error));
+            }
+
+            function integrateDataIntoChart(data1, data2, chartContainerID) {
+                const title = chartContainerID === 'chartContainer1'
+                    ? "Between Keys Time Average"
+                    : "Key Press Time Average";
+
+                const chart = new CanvasJS.Chart(chartContainerID, {
+                    backgroundColor: "black",
+                    title: {
+                        text: title,
+                        fontColor: "white"
+                    },
+                    axisX: {
+                        labelFontColor: "white",
+                        title: "Keys",
+                        titleFontColor: "white",
+                    },
+                    axisY: {
+                        labelFontColor: "white",
+                        titleFontColor: "white",
+                        textColor: "white",
+                        title: "Time (ms)"
+                    },
+                    data: [
+                        {
+                            type: "line",
+                            showInLegend: true,
+                            legendText: "Average User",
+                            dataPoints: [],
+                            lineColor: "red"  // Color for the avergae user line
+                        },
+                        {
+                            type: "line",
+                            showInLegend: true,
+                            legendText: Object.keys(data1)[0],
+                            dataPoints: [],
+                            lineColor: "blue" // Color for current user
+                        }
+                    ]
+                });
+
+                const user1 = Object.keys(data1)[0]; // Extract the username from the first data object
+                const user2 = Object.keys(data2)[0]; // Extract the username from the second data object
+
+                for (const key in data1[user1]) {
+                    if (data1[user1].hasOwnProperty(key)) {
+                        const interval = key;
+                        const time = data1[user1][key];
+                        const dataPoint = {
+                            label: interval,
+                            y: time
+                        };
+                        chart.options.data[0].dataPoints.push(dataPoint);
+                    }
+                }
+
+                for (const key in data2[user2]) {
+                    if (data2[user2].hasOwnProperty(key)) {
+                        const interval = key;
+                        const time = data2[user2][key];
+                        const dataPoint = {
+                            label: interval,
+                            y: time
+                        };
+                        chart.options.data[1].dataPoints.push(dataPoint);
+                    }
+                }
+
+                chart.render();
+            }
+
+            // Call function to read JSON data with two file paths and the chart container ID
+            readJSONData('resources/BetweenKeysChartData.json', 'resources/AllBetweenKeysChartData.json', 'chartContainer1');
+            readJSONData('resources/KeyPressChartData.json', 'resources/AllKeyPressChartData.json', 'chartContainer2');
+        }
+    </script>
+</body>
+</html>

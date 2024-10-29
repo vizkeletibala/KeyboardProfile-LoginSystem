@@ -1,0 +1,71 @@
+<?php
+header('Expires: Sun, 01 Jan 2025 00:00:00 GMT');
+header('Cache-Control: no-store, no-cache, must-revalidate');
+header('Cache-Control: post-check=0, pre-check=0', FALSE);
+header('Pragma: no-cache');
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Pattern Login</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <a href="#" class="logo">Keyboard Pattern Login System</a>
+    <nav>
+        <ul>
+            <li><a href="index.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<div class="paragraph-container"> 
+    <p id="paragraph-container"><b>Welcome</b> to the website of my BSC Thesis! Let me introduce you to the concept! <br>
+        My thesis is about a login system, that can authenticate users based on their keyboard patterns and behavior. <br>
+        This means that the system can recognize the user based on how they type on the keyboard, thus eliminating the need to memorise a password. <br>
+        This, however requires a bit of training for the model to create a keyboard profile of the user. <br>
+        If you would like to particiapte in this thesis, please <a href="register.html"><b>register</b></a> and follow the instructions. <br>
+        If you already have an account, you can test the model by using the login below. <br>
+    </p>
+</div>
+
+<form action="login.php" method="post" class="login-container">
+    <h2>Login</h2>
+    <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+    </div>
+    <input type="hidden" id="keyup" name="keyup">
+    <input type="hidden" id="keydown" name="keydown">
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="text" autocomplete="off" id="password" name="password" required>
+    </div>
+    <div class="form-group">
+        <button type="submit">Login</button>
+    </div>       
+</form>
+
+
+<div class="register-link">
+    <p id="help-text" >Let me help you a bit! The password is: <br>
+        <br>
+        <b>keyboardist</b>
+    </p>
+    <p id="question-msg">Don't have an account? <a href="register.html">Register here</a> <br>
+    If you have any questions you can contact me at <b>balint.vizkeleti@gmail.com</b></p>
+</div>
+
+</body>
+
+<script src="loginScript.js"></script>
+
+</html>

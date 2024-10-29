@@ -1,0 +1,103 @@
+<?php
+header('Expires: Sun, 01 Jan 2025 00:00:00 GMT');
+header('Cache-Control: no-store, no-cache, must-revalidate');
+header('Cache-Control: post-check=0, pre-check=0', FALSE);
+header('Pragma: no-cache');
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to the external CSS file -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">Keyboard Pattern Login System</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    
+    </header>
+
+<div class="paragraph-container">
+    <p> <b>Thank you for participating!</b> <br> In order register an account, we need to train the model on your keyboard patterns. <br>
+    As of now, ideally <b>you should be on a desktop or laptop </b> for this to properly work.<br>
+    To register, all you have to do, is repeatedly type the given password into the container below, and press the submit button after each attempt! <br> 
+    The chosen password is: <b>'keyboardist'</b> <br>
+    There is no particular scientific reason behind this, other than the fact that it is fairly short and uses many different keys. <br> <br>
+
+    <h3>So to register, follow these steps:</h3>
+
+    <ul class="instruction-list">
+        <li>Be on a laptop or desktop!</li>
+        <li>Think of a username! It can be anything you can remember easily.</li>
+        <li>Write down your username and email in the boxes below!</li>
+        <li>Write the word <b>'keyboardist'</b> into the password box, and press submit! <b> Don't copy and paste the password! </b> It will not count as a registration.</li>
+        <li>Repeat the previous step (step 4), until the counter reaches 10 and the box becomes green!</li>
+        <li>After 10 or so attempts, the black box containing your register count should turn green and a new message appears, which means you are done!</li>
+        <li>Navigate back to the login page using the menu above or the link at the bottom of the page, and login to test the model!</li>
+    </ul>
+
+    <p>
+        <h3>Some tips:</h3>
+
+        <ul class="instruction-list">
+            <li>Try to type the word as fast as you can. The timer starts after you push down the first key in the password box.</li>
+            <li>Its okay if you make mistakes, but try to aim for consistency!</li>
+            <li>You can copy and paste the username and email, but not the password! </li>
+            <li>You can submit more times than needed, which helps the accuracy of the model, but the maximum is 20.</li>
+            <li>After you gave your username, click outside the textbox to see the number of submitions linked to your username.</li>
+        </ul>
+    </p>
+
+</div>
+<form action="register.php" method="post" class="register-container">
+    <h2>Register</h2>
+    <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email (optional):</label>
+        <input type="email" id="email" name="email">
+    </div>
+    <input type="hidden" id="keyup" name="keyup">
+    <input type="hidden" id="keydown" name="keydown">
+    <div class="form-group">
+        <label id="pswd-label-ID" for="password">Password:</label>
+        <input type="text" id="password" autocomplete="off" name="password" required>
+    </div>
+    <div class="form-group">
+        <button type="submit">Submit</button>
+    </div>
+</form>
+
+<div class="registration-info">
+    <p id="registrationMessage">Type in your username to see the number of submitions.</p>
+    <div class="known-issues">
+        <p id="known-issues-msg">Hint: If this number is not updating after registration, <a href="https://support.google.com/accounts/answer/32050?hl=en&co=GENIE.Platform%3DDesktop">clear your browsing data</a></li> cache.</p>
+    </div>
+</div>
+
+<div class="login-link">
+    <p>Let me help you a bit, the password is: <br>
+        <b>keyboardist</b>
+    </p>
+    <p>Already have an account? <a href="index.html">Login here</a></p>
+    <p>If you have any questions you can contact me at <b>balint.vizkeleti@gmail.com</b></p>
+</div>
+
+</body>
+
+<script src="registerScript.js"></script>
+
+</html>
